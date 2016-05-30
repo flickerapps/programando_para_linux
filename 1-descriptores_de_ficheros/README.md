@@ -1,14 +1,14 @@
 Un descriptor de fichero es un `id` que representa el numero (de orden) que le corresponde a cada fichero abierto en un proceso, asi, por defecto se define `STDOUT` como 1, `STDIN` como 2, y `STDERR` como 3. Es decir, los ficheros que vayamos abriendo, tendran un `file descriptor` mayor que 3.
 prototipos de syscalls con descriptores de ficheros:
 
-```
+```c
 int creat( const char *pathname, mode_t mode )
 int open( const char *pathname, int flags )
 int open( const char *pathname, int flags, mode_t mode )
 ```
 
 Ejemplo:
-```
+```c
 int fd = open("mi_archivo.txt", O_RDONLY); /* solo lectura */
 ```
 Nota: al principio es confuso porque tendemos a pensar que `fd` almacena el archivo que devuelve `open()`, pero... es un `int`, como pasa esto?. La respuesta es: `open() devuelve el descriptor de fichero correspondiente al archivo que se ha abierto`.
@@ -18,11 +18,11 @@ Piensa en esto como un array, Lo que devuelve open es el index del elemento (un 
 el pathname es el nombre del archivo y flags es la manera de como abriremos dicho archivo (para leerlo, escribir, etc.). Flags puede tener los siguientes valores, se puede usar tanto el indicador (constante) como su valor numerico.
 
 Ejemplo con identificador como flag:
-```
+```c
 int fd = open("mi_archivo2.txt", O_RDONLY); /* solo lectura */
 ```
 o su valor numerico"
-```
+```c
 int fd = open("mi_archivo.txt", 0);
 ```
 

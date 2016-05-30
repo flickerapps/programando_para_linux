@@ -7,7 +7,7 @@
 
 int main(int argc, char const *argv[])
 {
-    gid_t group = 1001; /* grupo de usuarios (GID) 1001 */
-    chown("test.txt", -1, group); /* con -1 le decimos que deje el usuario que estaba */
+    char buffer[255];
+    printf("El directorio actual es: %s\n", getcwd(buffer, -1));
     return 0;
 }
