@@ -1,4 +1,4 @@
-Un descriptor de fichero es un `id` que representa el numero (de orden) que le corresponde a cada fichero abierto en un proceso, asi, por defecto se define `STDOUT` como 1, `STDIN` como 2, y `STDERR` como 3. Es decir, los ficheros que vayamos abriendo, tendran un `file descriptor` mayor que 3.
+Un descriptor de fichero es un `id` que representa el numero (de orden) que le corresponde a cada fichero abierto en un proceso, asi, por defecto se define `STDIN` como 0, `STDOUT` como 1 y `STDERR` como 2. Es decir, los ficheros que vayamos abriendo, tendran un `file descriptor` mayor que 2.
 prototipos de syscalls con descriptores de ficheros:
 
 ```c
